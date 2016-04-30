@@ -88,8 +88,8 @@ var randomPlay = function() {
 // getPlayerMove improvements to be made: refactoring and securing that if false is answered it keeps prompting for right value choice.
 var getPlayerMove = function(move) {
     move = getInput();
-    if (move === "rock" || move === "paper" || move === "scissors" || move === "Rock" || move === "Paper" || move === "Scissors") {
-    } else if (move !== true) { 
+    if (move == "rock" || move == "paper" || move == "scissors" || move == "Rock" || move == "Paper" || move == "Scissors") {
+    } else if (move != true) { 
         var tryAgain = prompt("Please make sure you type in 'rock', 'paper', or 'scissors' as one of your choices. Goodluck!");
         playerMove = tryAgain;
 }
@@ -100,8 +100,8 @@ var getPlayerMove = function(move) {
 // getComputerMove improvements to be made: refactoring.
 var getComputerMove = function(move) {
     move = randomPlay();
-    if (move === "rock" || move === "paper" || move === "scissors" || move === "Rock" || move === "Paper" || move === "Scissors") {
-    } else if (move !== true) { 
+    if (move == "rock" || move == "paper" || move == "scissors" || move == "Rock" || move == "Paper" || move == "Scissors") {
+    } else if (move != true) { 
         var computerFoul = prompt("Computer foul! Please make sure you type in 'rock', 'paper', or 'scissors' as one of your choices. Goodluck!");
         computerMove = computerFoul;
  }
@@ -176,23 +176,25 @@ var getWinner = function (playerMove,computerMove) {
 };
 
 //playToFive improvements to be made: adjust number of plays. Currently it will run from 1 to 5 plays at random and refactoring.
+// Fixed random plays issue. Game works properly. 
 var playToFive = function() {
     alert("Let's play Rock, Paper, Scissors");
     window.document.write("Let's play Rock, Paper, Scissors");
     var playerWins = 0;
     var computerWins = 0;
     
-    while (playerWins < 5 && computerWins < 5) {
+    while (playerWins != 5 && computerWins != 5) {
         winner = getWinner(playerMove, computerMove);
         // console.log("Player chooses " + playerMove + " and the Computer chooses " + computerMove + "." );
-        if (winner === "Player") {
+        // window.document.write("Player chooses " + playerMove + " and the Computer chooses " + computerMove + "." );
+        if (winner == "Player") {
             playerWins ++;
-        } else if (winner === "Computer") {
+        } else if (winner == "Computer") {
             computerWins ++;
-        // } else if (winner === "tie") {
+        // } else if (winner == "tie") {
         } else {
-            // console.log("It's a tie!");
-    break;
+            console.log("Give it another go!");
+    // break;
     }
   }  
     console.log("The scoreboard sits at Player:" + playerWins + " and Computer:" + computerWins + ".");
