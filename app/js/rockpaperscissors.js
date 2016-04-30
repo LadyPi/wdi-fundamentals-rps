@@ -59,8 +59,6 @@ function playToFive() {
 /*           Vanessa's Code                  */
 ////////////////////////////////////////////////
 
-// repl.it  site: // https://repl.it/CL45/37
-
 //work on 'use strict';
 
 var computerMove, playerMove, winner, randomMove;
